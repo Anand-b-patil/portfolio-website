@@ -1,64 +1,118 @@
-<!-- style.css -->
 body {
   font-family: 'Segoe UI', sans-serif;
-  background: #f4f4f4;
+  /* Add a vibrant gradient background */
+  background: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
   color: #333;
   margin: 0;
   padding: 0;
   line-height: 1.6;
   scroll-behavior: smooth;
+  /* Overlay a subtle SVG pattern */
+  position: relative;
+}
+body::before {
+  content: '';
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  z-index: -1;
+  opacity: 0.18;
+  background: url('data:image/svg+xml;utf8,<svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="20" cy="20" r="2" fill="%23ffffff"/><circle cx="0" cy="40" r="2" fill="%23ffffff"/><circle cx="40" cy="0" r="2" fill="%23ffffff"/></svg>');
+  background-repeat: repeat;
 }
 
 header {
-  background: linear-gradient(135deg, #004080, #0073e6);
+  background: linear-gradient(135deg, #004080, #0073e6, #00c6fb);
   color: white;
   text-align: center;
-  padding: 30px 20px;
+  padding: 40px 20px 30px 20px;
+  border-radius: 0 0 30px 30px;
+  box-shadow: 0 8px 32px 0 rgba(0, 64, 128, 0.15);
   animation: fadeInDown 1s ease-out;
 }
 
 header h1 {
   margin: 0;
-  font-size: 2.2rem;
+  font-size: 2.6rem;
+  letter-spacing: 2px;
+  font-weight: 700;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+header p {
+  font-size: 1.2rem;
+  margin-top: 10px;
+  margin-bottom: 0;
+  opacity: 0.95;
 }
 
 nav {
-  margin-top: 15px;
+  margin-top: 18px;
   animation: fadeIn 2s ease;
 }
 
 nav a {
-  margin: 0 12px;
-  color: white;
+  margin: 0 16px;
+  color: #fff;
   text-decoration: none;
-  font-weight: 500;
+  font-weight: 600;
+  font-size: 1.08rem;
+  padding: 6px 12px;
+  border-radius: 6px;
+  transition: background 0.2s, color 0.2s, transform 0.2s;
+}
+nav a:hover {
+  background: rgba(0,198,251,0.18);
+  color: #00c6fb;
+  transform: scale(1.08);
 }
 
 main {
-  padding: 20px;
-  max-width: 900px;
-  margin: auto;
+  padding: 30px 20px 20px 20px;
+  max-width: 950px;
+  margin: 30px auto 0 auto;
+  background: rgba(255,255,255,0.85);
+  border-radius: 18px;
+  box-shadow: 0 4px 32px 0 rgba(0, 64, 128, 0.08);
 }
 
 section {
   margin-bottom: 50px;
   opacity: 0;
-  transform: translateY(20px);
-  animation: fadeInUp 1s forwards;
+  transform: translateY(40px);
+  transition: opacity 0.8s, transform 0.8s;
   animation-delay: 0.2s;
+}
+section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+section h2 {
+  font-size: 2rem;
+  color: #004080;
+  margin-bottom: 18px;
+  letter-spacing: 1px;
+  border-left: 5px solid #00c6fb;
+  padding-left: 12px;
+  background: linear-gradient(90deg, #c2e9fb 60%, transparent 100%);
+  border-radius: 6px;
+  display: inline-block;
 }
 
 .project {
-  background: white;
+  background: linear-gradient(100deg, #e0eafc 60%, #cfdef3 100%);
   border-left: 5px solid #004080;
-  padding: 15px;
-  margin-bottom: 20px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
+  padding: 18px 18px 15px 18px;
+  margin-bottom: 22px;
+  box-shadow: 0 4px 16px rgba(0, 64, 128, 0.08);
+  border-radius: 10px;
+  transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
 }
 
 .project:hover {
-  transform: translateY(-5px);
+  transform: translateY(-10px) scale(1.04);
+  background: linear-gradient(100deg, #b6fbff 60%, #83a4d4 100%);
+  box-shadow: 0 8px 32px rgba(0, 64, 128, 0.13);
 }
 
 ul {
@@ -71,25 +125,52 @@ li {
 }
 
 .btn {
-  background: #004080;
+  background: linear-gradient(90deg, #004080 60%, #00c6fb 100%);
   color: white;
-  padding: 10px 15px;
+  padding: 12px 22px;
   display: inline-block;
   margin-top: 10px;
   text-decoration: none;
-  border-radius: 4px;
-  transition: background 0.3s ease;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 1.08rem;
+  box-shadow: 0 2px 8px rgba(0,64,128,0.08);
+  transition: background 0.3s, transform 0.2s;
 }
 
 .btn:hover {
-  background: #003366;
+  background: linear-gradient(90deg, #003366 60%, #00aaff 100%);
+  transform: scale(1.04);
+}
+
+#toggle-mode {
+  position: absolute;
+  top: 18px;
+  right: 24px;
+  background: rgba(255,255,255,0.7);
+  color: #004080;
+  border: none;
+  border-radius: 50%;
+  width: 44px;
+  height: 44px;
+  font-size: 1.3rem;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0,64,128,0.08);
+  transition: background 0.2s, color 0.2s;
+  z-index: 10;
+}
+#toggle-mode:hover {
+  background: #004080;
+  color: #fff;
 }
 
 footer {
   background: #eee;
-  padding: 15px;
+  padding: 18px;
   text-align: center;
-  font-size: 0.9em;
+  font-size: 1em;
+  border-radius: 0 0 18px 18px;
+  box-shadow: 0 -2px 8px rgba(0,64,128,0.04);
   animation: fadeIn 2s ease;
 }
 
@@ -108,20 +189,90 @@ footer {
   to { opacity: 1; }
 }
 
+/* --- DARK MODE --- */
+body.dark-mode {
+  background: linear-gradient(120deg, #232526 0%, #414345 100%);
+  color: #e0e0e0;
+}
+body.dark-mode::before {
+  opacity: 0.10;
+}
+header.dark-mode {
+  background: linear-gradient(135deg, #232526, #414345, #232526);
+  color: #fff;
+  box-shadow: 0 8px 32px 0 rgba(30, 30, 30, 0.25);
+}
+main.dark-mode {
+  background: rgba(30,30,30,0.92);
+  box-shadow: 0 4px 32px 0 rgba(30,30,30,0.18);
+}
+section.dark-mode h2 {
+  color: #00c6fb;
+  background: linear-gradient(90deg, #232526 60%, transparent 100%);
+  border-left: 5px solid #00c6fb;
+}
+.project.dark-mode {
+  background: linear-gradient(100deg, #232526 60%, #414345 100%);
+  border-left: 5px solid #00c6fb;
+  color: #e0e0e0;
+}
+.btn.dark-mode {
+  background: linear-gradient(90deg, #232526 60%, #00c6fb 100%);
+  color: #fff;
+}
+.btn.dark-mode:hover {
+  background: linear-gradient(90deg, #414345 60%, #00aaff 100%);
+}
+nav.dark-mode a {
+  color: #fff;
+}
+nav.dark-mode a:hover {
+  background: rgba(0,198,251,0.18);
+  color: #00c6fb;
+}
+footer.dark-mode {
+  background: #232526;
+  color: #e0e0e0;
+  box-shadow: 0 -2px 8px rgba(30,30,30,0.10);
+}
+
+/* --- RESPONSIVE DESIGN IMPROVEMENTS --- */
 @media (max-width: 768px) {
   header, section, footer {
-    padding: 15px;
+    padding: 12px;
     text-align: center;
   }
-
   nav {
     display: flex;
     flex-direction: column;
     gap: 10px;
   }
-
   .btn {
     width: 100%;
     text-align: center;
+    font-size: 1.1rem;
+    padding: 16px 0;
   }
+  main {
+    padding: 6px;
+  }
+  .project {
+    padding: 12px 8px;
+  }
+}
+
+/* --- PROMINENT RESUME BUTTON --- */
+.btn.resume {
+  font-size: 1.2rem;
+  padding: 18px 36px;
+  margin: 18px 0 0 0;
+  border: 2px solid #00c6fb;
+  box-shadow: 0 4px 16px rgba(0,198,251,0.12);
+  letter-spacing: 1px;
+  font-weight: 700;
+}
+.btn.resume.dark-mode {
+  border: 2px solid #00c6fb;
+  background: linear-gradient(90deg, #232526 60%, #00c6fb 100%);
+  color: #fff;
 }
