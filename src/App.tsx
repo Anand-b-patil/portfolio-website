@@ -287,7 +287,21 @@ function ProjectsSection() {
       github: "GitHub",
       description: "Developed an AI-driven CRM tool that automates lead scoring, enrichment, and personalized outreach generation. Integrated Google Gemini API for intelligent lead scoring and message generation, with fallback deterministic scoring. Built a modular React + Flask architecture supporting CSV import, lead filtering, and insight visualization.",
       tech: "React, Vite, Flask, Python, Google Gemini API, HTML, CSS, JavaScript"
-    }
+    },
+    {
+      title: "Laptop Price Predictor – Machine Learning Based Price Estimator",
+      github: "https://github.com/Anand-b-patil/Laptop-Price-Predictor",
+      description: "Built an intelligent machine learning model to predict laptop prices based on key specifications such as brand, processor type, RAM, storage, GPU, and display features. Implemented end-to-end pipeline including data preprocessing, feature engineering, model training, and deployment through a web interface for real-time predictions.",
+      tech: "Python, Scikit-learn, Pandas, NumPy, Matplotlib, Flask, HTML, CSS"
+    },
+    {
+  title: "Air Quality Prediction & Forecasting – Machine Learning Application",
+  github: "https://github.com/Anand-b-patil/Air-Quality-Prediction-and-Forecasting-using-Machine-Learning",
+  description: "Developed a dual-model system to (1) predict current Air Quality Index (AQI) based on pollutant levels and (2) forecast AQI up to 7 days ahead using historic time-series data. Built an interactive web interface via FastAPI for real-time input/predictions and dynamic visualization of forecasting results.",
+  tech: "Python, FastAPI, XGBoost, Optuna, Pandas, Scikit-learn, Tailwind CSS, Chart.js"
+  }
+
+
   ];
 
   return (
