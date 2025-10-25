@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
-import svgPaths from "./imports/svg-6sovak61ez";
-import imgAdobeExpressFile31 from "figma:asset/7ba16f5335969b66c314f7955ee4897ab548acd6.png";
+// removed unused svgPaths import and profile image per request
 
 function Navigation() {
   const [activeSection, setActiveSection] = useState('home');
@@ -119,7 +118,6 @@ function HeroSection() {
       element.scrollIntoView({ behavior: 'smooth' });
     }
   };
-
   return (
     <section id="home" className="min-h-screen relative flex items-center justify-center overflow-hidden">
       {/* Background blur effect */}
@@ -145,9 +143,9 @@ function HeroSection() {
         </div>
       </div>
 
-      <div className="relative max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-        {/* Left content */}
-        <div className="space-y-8">
+      <div className="relative max-w-7xl mx-auto px-6 flex flex-col items-center justify-center gap-12">
+        {/* Centered content */}
+        <div className="space-y-8 text-center mx-auto">
           <div className="space-y-4">
             <h2 className="font-['Poppins:Bold',_sans-serif] text-[24px] text-[#f8f7f9]">
               HI, I'M ANAND
@@ -165,14 +163,6 @@ function HeroSection() {
               VIEW MY PROJECTS
             </span>
           </button>
-        </div>
-
-        {/* Right content - Profile image */}
-        <div className="relative">
-          <div
-            className="w-full h-[600px] lg:h-[800px] bg-cover bg-center bg-no-repeat rounded-lg"
-            style={{ backgroundImage: `url('${imgAdobeExpressFile31}')` }}
-          />
         </div>
       </div>
     </section>
