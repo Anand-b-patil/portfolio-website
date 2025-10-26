@@ -52,7 +52,7 @@ function Navigation() {
               <button
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
-                className={`font-['Poppins:Regular',_sans-serif] text-[18px] transition-colors duration-200 ${
+                className={`nav-item font-['Poppins:Regular',_sans-serif] text-[18px] transition-colors duration-200 ${
                   activeSection === item.id ? 'text-[#f8f7f9]' : 'text-[#f8f7f9]/70 hover:text-[#f8f7f9]'
                 }`}
               >
@@ -102,7 +102,7 @@ function SocialIcon({ type, href }: { type: 'linkedin' | 'github'; href: string 
       href={href} 
       target="_blank" 
       rel="noopener noreferrer"
-      className="text-[#f8f7f9] hover:text-[#f8f7f9]/80 transition-colors duration-200"
+      className="social-icon text-[#f8f7f9] hover:text-[#f8f7f9]/80 transition-colors duration-200"
     >
       <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24">
         {getPath()}
@@ -150,14 +150,14 @@ function HeroSection() {
             <h2 className="font-['Poppins:Bold',_sans-serif] text-[24px] text-[#f8f7f9]">
               HI, I'M ANAND
             </h2>
-            <h1 className="font-['Poppins:Bold',_sans-serif] text-[64px] lg:text-[96px] leading-[0.9] text-[#f8f7f9]">
+            <h1 className="font-['Poppins:Bold',_sans-serif] text-[64px] lg:text-[96px] leading-[0.9] text-[#f8f7f9] gradient-text">
               AI/ML<br />ENGINEER
             </h1>
           </div>
           
           <button 
             onClick={scrollToProjects}
-            className="group border-2 border-[#f8f7f9] px-8 py-4 rounded-2xl transition-all duration-300 hover:bg-[#f8f7f9] hover:text-[#1f1f1f]"
+            className="group btn-animated border-2 border-[#f8f7f9] px-8 py-4 rounded-2xl transition-all duration-300 hover:bg-[#f8f7f9] hover:text-[#1f1f1f]"
           >
             <span className="font-['Poppins:Bold',_sans-serif] text-[24px] text-[#f8f7f9] group-hover:text-[#1f1f1f] transition-colors duration-300">
               VIEW MY PROJECTS
@@ -319,7 +319,7 @@ function ProjectsSection() {
 
 function ProjectItem({ title, github, description, tech }: { title: string; github: string; description: string; tech: string }) {
   return (
-    <div className="max-w-4xl relative">
+    <div className="max-w-4xl relative project-card section-fade-in">
       <div className="pl-8 relative">
         <div className="absolute left-[-9px] top-[12px] w-[15px] h-[15px] bg-white/80 rounded-full backdrop-blur-sm" 
              style={{ filter: 'blur(0.5px)' }} />
