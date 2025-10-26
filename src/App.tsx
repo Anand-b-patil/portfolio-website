@@ -2,6 +2,13 @@ import { useState, useEffect } from 'react';
 // removed unused svgPaths import and profile image per request
 import useInView from './hooks/useInView';
 import Modal from './components/Modal';
+import {
+  Card,
+  CardHeader,
+  CardTitle,
+  CardDescription,
+  CardContent,
+} from './components/ui/card';
 
 function Navigation() {
   const [activeSection, setActiveSection] = useState('home');
@@ -54,9 +61,9 @@ function Navigation() {
               <button
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
-                className={`nav-item font-['Poppins:Regular',_sans-serif] text-[18px] transition-colors duration-200 ${
-                  activeSection === item.id ? 'text-[#f8f7f9]' : 'text-[#f8f7f9]/70 hover:text-[#f8f7f9]'
-                }`}
+                  className={`nav-item font-['Poppins:Regular',_sans-serif] text-[18px] transition-colors duration-200 ${
+                    activeSection === item.id ? 'text-[#f8f7f9] active' : 'text-[rgba(248,247,249,0.78)] hover:text-[#f8f7f9]'
+                  }`}
               >
                 {item.label}
               </button>
@@ -152,7 +159,7 @@ function HeroSection() {
             <h2 className="font-['Poppins:Bold',_sans-serif] text-[24px] text-[#f8f7f9]">
               HI, I'M ANAND
             </h2>
-            <h1 className="font-['Poppins:Bold',_sans-serif] text-[64px] lg:text-[96px] leading-[0.9] text-[#f8f7f9] gradient-text">
+            <h1 className="font-['Poppins:Bold',_sans-serif] text-[48px] md:text-[64px] lg:text-[88px] leading-[0.9] text-[#f8f7f9] gradient-text">
               AI/ML<br />ENGINEER
             </h1>
           </div>
@@ -175,35 +182,35 @@ function AboutSection() {
   return (
     <section id="about" className="py-20 relative">
       <div className="max-w-7xl mx-auto px-6">
-        <h2 className="font-['Poppins:Bold',_sans-serif] text-[96px] text-[#f8f7f9] mb-12">
+        <h2 className="font-['Poppins:Bold',_sans-serif] text-[40px] md:text-[56px] lg:text-[72px] text-[#f8f7f9] mb-12">
           About me
         </h2>
         
         <div className="max-w-4xl">
-          <p className="font-['Poppins:Regular',_sans-serif] text-[24px] text-[rgba(248,247,249,0.5)] leading-[1.5] mb-8">
+          <p className="font-['Poppins:Regular',_sans-serif] text-[24px] text-[rgba(248,247,249,0.85)] leading-[1.5] mb-8">
             I'm a final-year CSE student from Belagavi, Karnataka, skilled in Machine Learning, Deep Learning, and Python. I have hands-on experience in building end-to-end AI solutions using TensorFlow, PyTorch, scikit-learn, and FastAPI.
           </p>
-          <p className="font-['Poppins:Regular',_sans-serif] text-[24px] text-[rgba(248,247,249,0.5)] leading-[1.5]">
+          <p className="font-['Poppins:Regular',_sans-serif] text-[24px] text-[rgba(248,247,249,0.85)] leading-[1.5]">
             I'm passionate about leveraging AI and full-stack technologies to develop efficient real-world applications that improve operational efficiency and user experience. My work spans across computer vision, natural language processing, and intelligent systems development.
           </p>
         </div>
 
         {/* Education */}
         <div className="mt-16">
-          <h3 className="font-['Poppins:Bold',_sans-serif] text-[24px] text-[#f8f7f9] mb-8">
+          <h3 className="font-['Poppins:Bold',_sans-serif] text-[20px] md:text-[22px] text-[#f8f7f9] mb-8">
             EDUCATION
           </h3>
           <div className="max-w-4xl">
-            <h4 className="font-['Poppins:ExtraBold',_sans-serif] text-[24px] text-[rgba(248,247,249,0.5)] mb-2">
+            <h4 className="font-['Poppins:ExtraBold',_sans-serif] text-[20px] md:text-[22px] text-[rgba(248,247,249,0.85)] mb-2">
               Angadi Institute of Technology and Management, BE in Computer Science
             </h4>
-            <p className="font-['Poppins:ExtraLight',_sans-serif] text-[24px] text-[rgba(248,247,249,0.5)] mb-3">
+            <p className="font-['Poppins:ExtraLight',_sans-serif] text-[18px] md:text-[20px] text-[rgba(248,247,249,0.85)] mb-3">
               Dec 2022 — May 2026
             </p>
-            <p className="font-['Poppins:Medium',_sans-serif] text-[24px] text-[rgba(248,247,249,0.5)] leading-[1.5] mb-4">
+            <p className="font-['Poppins:Medium',_sans-serif] text-[18px] md:text-[20px] text-[rgba(248,247,249,0.85)] leading-[1.5] mb-4">
               GPA: 8.56/10
             </p>
-            <p className="font-['Poppins:Medium',_sans-serif] text-[24px] text-[rgba(248,247,249,0.5)] leading-[1.5]">
+            <p className="font-['Poppins:Medium',_sans-serif] text-[18px] md:text-[20px] text-[rgba(248,247,249,0.85)] leading-[1.5]">
               Coursework: Data Structures and Algorithms, Database Management Systems, Operating Systems, Object-Oriented Programming (OOP), Computer Networks, Software Engineering, Machine Learning
             </p>
           </div>
@@ -211,39 +218,39 @@ function AboutSection() {
 
         {/* Skills */}
         <div className="mt-16">
-          <h3 className="font-['Poppins:Bold',_sans-serif] text-[24px] text-[#f8f7f9] mb-8">
+          <h3 className="font-['Poppins:Bold',_sans-serif] text-[20px] md:text-[22px] text-[#f8f7f9] mb-8">
             SKILLS
           </h3>
           <div className="max-w-4xl space-y-6">
             <div>
-              <h4 className="font-['Poppins:ExtraBold',_sans-serif] text-[24px] text-[rgba(248,247,249,0.5)] mb-2">
+              <h4 className="font-['Poppins:ExtraBold',_sans-serif] text-[18px] md:text-[20px] text-[rgba(248,247,249,0.85)] mb-2">
                 Programming Languages
               </h4>
-              <p className="font-['Poppins:Medium',_sans-serif] text-[24px] text-[rgba(248,247,249,0.5)] leading-[1.5]">
+              <p className="font-['Poppins:Medium',_sans-serif] text-[18px] md:text-[20px] text-[rgba(248,247,249,0.85)] leading-[1.5]">
                 Python, C++, C, Java (Basic), SQL
               </p>
             </div>
             <div>
-              <h4 className="font-['Poppins:ExtraBold',_sans-serif] text-[24px] text-[rgba(248,247,249,0.5)] mb-2">
+              <h4 className="font-['Poppins:ExtraBold',_sans-serif] text-[18px] md:text-[20px] text-[rgba(248,247,249,0.85)] mb-2">
                 Machine Learning & Deep Learning
               </h4>
-              <p className="font-['Poppins:Medium',_sans-serif] text-[24px] text-[rgba(248,247,249,0.5)] leading-[1.5]">
+              <p className="font-['Poppins:Medium',_sans-serif] text-[18px] md:text-[20px] text-[rgba(248,247,249,0.85)] leading-[1.5]">
                 TensorFlow, PyTorch, scikit-learn, Keras, OpenCV, NLP
               </p>
             </div>
             <div>
-              <h4 className="font-['Poppins:ExtraBold',_sans-serif] text-[24px] text-[rgba(248,247,249,0.5)] mb-2">
+              <h4 className="font-['Poppins:ExtraBold',_sans-serif] text-[18px] md:text-[20px] text-[rgba(248,247,249,0.85)] mb-2">
                 Deployment & Databases
               </h4>
-              <p className="font-['Poppins:Medium',_sans-serif] text-[24px] text-[rgba(248,247,249,0.5)] leading-[1.5]">
+              <p className="font-['Poppins:Medium',_sans-serif] text-[18px] md:text-[20px] text-[rgba(248,247,249,0.85)] leading-[1.5]">
                 FastAPI, Flask, REST APIs, MongoDB, MySQL
               </p>
             </div>
             <div>
-              <h4 className="font-['Poppins:ExtraBold',_sans-serif] text-[24px] text-[rgba(248,247,249,0.5)] mb-2">
+              <h4 className="font-['Poppins:ExtraBold',_sans-serif] text-[18px] md:text-[20px] text-[rgba(248,247,249,0.85)] mb-2">
                 Tools & Platforms
               </h4>
-              <p className="font-['Poppins:Medium',_sans-serif] text-[24px] text-[rgba(248,247,249,0.5)] leading-[1.5]">
+              <p className="font-['Poppins:Medium',_sans-serif] text-[18px] md:text-[20px] text-[rgba(248,247,249,0.85)] leading-[1.5]">
                 Git, GitHub, Jupyter Notebook, Google Colab, VS Code, Kaggle, Docker, Linux
               </p>
             </div>
