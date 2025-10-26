@@ -264,6 +264,13 @@ html {
   border-radius: 12px;
   padding: 24px;
   box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+  transform: translateY(8px) scale(.98);
+  opacity: 0;
+  animation: modalIn 240ms cubic-bezier(.2,.9,.3,1) forwards;
+}
+@keyframes modalIn {
+  from { transform: translateY(8px) scale(.98); opacity: 0; }
+  to { transform: translateY(0) scale(1); opacity: 1; }
 }
 .modal .close-btn {
   position: absolute;
@@ -277,8 +284,22 @@ html {
 }
 
 /* nav and social hover */
-.nav-item { transition: color 180ms ease, transform 180ms ease; }
+.nav-item { transition: color 180ms ease, transform 180ms ease; position: relative; }
 .nav-item:hover { transform: translateY(-2px); color: var(--accent-4); }
+.nav-item::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -6px;
+  width: 0;
+  height: 3px;
+  background: var(--accent-3);
+  border-radius: 6px;
+  transition: width 220ms cubic-bezier(.2,.9,.3,1), opacity 220ms;
+  opacity: 0;
+}
+.nav-item.active::after { width: 46%; opacity: 1; }
 .social-icon { transition: transform 160ms ease, color 160ms ease; }
 .social-icon:hover { transform: scale(1.12); color: var(--accent-3); }
 
