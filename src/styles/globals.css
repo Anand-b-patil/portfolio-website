@@ -199,6 +199,12 @@ html {
   --gradient-duration: 5s; /* animation speed variable */
 }
 
+/* Site-wide typography variables for uniform text */
+:root {
+  --site-text-color: #e6e6e6; /* uniform text color */
+  --site-font-size: 18px; /* uniform base font size */
+}
+
 /* gradient animated text */
 .gradient-text {
   background: var(--gradient-2);
@@ -306,4 +312,31 @@ html {
 /* subtle entrance for sections */
 .section-fade-in { opacity: 0; transform: translateY(6px); animation: fadeInUp 600ms ease forwards; }
 @keyframes fadeInUp { to { opacity: 1; transform: translateY(0); } }
+
+/* ---------- Uniform text size & color (applies to typographic elements) ---------- */
+/* This rule enforces a consistent color and font-size across headings, paragraphs,
+   lists and inline text. It intentionally uses !important to override utility
+   classes that set text color/size so the site appears uniform per the user's request. */
+/* Be mindful: this will disable gradient-text effects and override Tailwind text utilities. */
+h1, h2, h3, h4, h5, h6,
+p, span, a, li, label, button, small, strong, em {
+  color: var(--site-text-color) !important;
+  font-size: var(--site-font-size) !important;
+  line-height: 1.45 !important;
+}
+
+/* Ensure inputs and form controls remain legible but match the color */
+input, textarea, select {
+  color: var(--site-text-color) !important;
+  font-size: var(--site-font-size) !important;
+}
+
+/* Disable gradient-text visual by forcing a solid color when uniform text is requested */
+.gradient-text {
+  -webkit-background-clip: initial !important;
+  background-clip: initial !important;
+  background: none !important;
+  color: var(--site-text-color) !important;
+  -webkit-text-fill-color: var(--site-text-color) !important;
+}
 
