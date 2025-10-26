@@ -156,10 +156,10 @@ function HeroSection() {
         {/* Centered content */}
         <div className="space-y-8 text-center mx-auto">
           <div className="space-y-4">
-            <h2 className="font-['Poppins:Bold',_sans-serif] text-[24px] text-[#f8f7f9]">
+            <h2 className="font-bold text-2xl text-[#f8f7f9]">
               HI, I'M ANAND
             </h2>
-            <h1 className="font-['Poppins:Bold',_sans-serif] text-[48px] md:text-[64px] lg:text-[88px] leading-[0.9] text-[#f8f7f9] gradient-text">
+            <h1 className="font-extrabold text-6xl md:text-4xl lg:text-6xl leading-[0.9] text-[#f8f7f9] gradient-text">
               AI/ML<br />ENGINEER
             </h1>
           </div>
@@ -168,7 +168,7 @@ function HeroSection() {
             onClick={scrollToProjects}
             className="group btn-animated border-2 border-[#f8f7f9] px-8 py-4 rounded-2xl transition-all duration-300 hover:bg-[#f8f7f9] hover:text-[#1f1f1f]"
           >
-            <span className="font-['Poppins:Bold',_sans-serif] text-[24px] text-[#f8f7f9] group-hover:text-[#1f1f1f] transition-colors duration-300">
+            <span className="font-bold text-2xl text-[#f8f7f9] group-hover:text-[#1f1f1f] transition-colors duration-300">
               VIEW MY PROJECTS
             </span>
           </button>
@@ -182,35 +182,35 @@ function AboutSection() {
   return (
     <section id="about" className="py-20 relative">
       <div className="max-w-7xl mx-auto px-6">
-        <h2 className="font-['Poppins:Bold',_sans-serif] text-[40px] md:text-[56px] lg:text-[72px] text-[#f8f7f9] mb-12">
+        <h2 className="font-bold text-4xl text-[#f8f7f9] mb-12">
           About me
         </h2>
         
         <div className="max-w-4xl">
-          <p className="font-['Poppins:Regular',_sans-serif] text-[24px] text-[rgba(248,247,249,0.85)] leading-[1.5] mb-8">
+          <p className="font-normal text-2xl text-[rgba(248,247,249,0.85)] leading-[1.5] mb-8">
             I'm a final-year CSE student from Belagavi, Karnataka, skilled in Machine Learning, Deep Learning, and Python. I have hands-on experience in building end-to-end AI solutions using TensorFlow, PyTorch, scikit-learn, and FastAPI.
           </p>
-          <p className="font-['Poppins:Regular',_sans-serif] text-[24px] text-[rgba(248,247,249,0.85)] leading-[1.5]">
+          <p className="font-normal text-2xl text-[rgba(248,247,249,0.85)] leading-[1.5]">
             I'm passionate about leveraging AI and full-stack technologies to develop efficient real-world applications that improve operational efficiency and user experience. My work spans across computer vision, natural language processing, and intelligent systems development.
           </p>
         </div>
 
         {/* Education */}
         <div className="mt-16">
-          <h3 className="font-['Poppins:Bold',_sans-serif] text-[20px] md:text-[22px] text-[#f8f7f9] mb-8">
+          <h3 className="font-bold text-xl text-[#f8f7f9] mb-8">
             EDUCATION
           </h3>
           <div className="max-w-4xl">
-            <h4 className="font-['Poppins:ExtraBold',_sans-serif] text-[20px] md:text-[22px] text-[rgba(248,247,249,0.85)] mb-2">
+            <h4 className="font-extrabold text-xl text-[rgba(248,247,249,0.85)] mb-2">
               Angadi Institute of Technology and Management, BE in Computer Science
             </h4>
-            <p className="font-['Poppins:ExtraLight',_sans-serif] text-[18px] md:text-[20px] text-[rgba(248,247,249,0.85)] mb-3">
+            <p className="font-light text-lg text-[rgba(248,247,249,0.85)] mb-3">
               Dec 2022 — May 2026
             </p>
-            <p className="font-['Poppins:Medium',_sans-serif] text-[18px] md:text-[20px] text-[rgba(248,247,249,0.85)] leading-[1.5] mb-4">
+            <p className="font-medium text-lg text-[rgba(248,247,249,0.85)] leading-[1.5] mb-4">
               GPA: 8.56/10
             </p>
-            <p className="font-['Poppins:Medium',_sans-serif] text-[18px] md:text-[20px] text-[rgba(248,247,249,0.85)] leading-[1.5]">
+            <p className="font-medium text-lg text-[rgba(248,247,249,0.85)] leading-[1.5]">
               Coursework: Data Structures and Algorithms, Database Management Systems, Operating Systems, Object-Oriented Programming (OOP), Computer Networks, Software Engineering, Machine Learning
             </p>
           </div>
@@ -306,7 +306,7 @@ function ProjectsSection() {
   return (
     <section id="projects" className="py-20 relative">
       <div className="max-w-7xl mx-auto px-6">
-        <h2 className="font-['Poppins:Bold',_sans-serif] text-[96px] text-[#f8f7f9] mb-12">
+        <h2 className="font-bold text-4xl text-[#f8f7f9] mb-12">
           Projects
         </h2>
         
@@ -336,14 +336,14 @@ function ProjectItem({ title, github, description, tech }: { title: string; gith
         <div className="pl-8 relative">
           <div className="absolute left-[-9px] top-[12px] w-[15px] h-[15px] bg-white/80 rounded-full backdrop-blur-sm" 
                style={{ filter: 'blur(0.5px)' }} />
-          <h3 className="font-['Poppins:ExtraBold',_sans-serif] text-[24px] text-[rgba(248,247,249,0.5)] mb-1">
-            {title} <span className="font-['Poppins:Medium',_sans-serif]">{github}</span>
+          <h3 className="font-extrabold text-2xl text-[rgba(248,247,249,0.85)] mb-1">
+            {title} <span className="font-medium">{github}</span>
           </h3>
-          <p className="font-['Poppins:Medium',_sans-serif] text-[24px] text-[rgba(248,247,249,0.5)] leading-[1.5] mb-3">
+          <p className="font-medium text-2xl text-[rgba(248,247,249,0.85)] leading-[1.5] mb-3">
             {description}
           </p>
-          <p className="font-['Poppins:Medium',_sans-serif] text-[24px] text-[rgba(248,247,249,0.5)] leading-[1.5]">
-            <span className="font-['Poppins:ExtraBold',_sans-serif]">Tech Stack:</span> {tech}
+          <p className="font-medium text-2xl text-[rgba(248,247,249,0.85)] leading-[1.5]">
+            <span className="font-extrabold">Tech Stack:</span> {tech}
           </p>
         </div>
       </div>
@@ -366,7 +366,7 @@ function CertificationsSection() {
   return (
     <section id="certifications" className="py-20 relative">
       <div className="max-w-7xl mx-auto px-6">
-        <h2 className="font-['Poppins:Bold',_sans-serif] text-[96px] text-[#f8f7f9] mb-12">
+          <h2 className="font-bold text-4xl text-[#f8f7f9] mb-12">
           Awards & Achievements
         </h2>
         
@@ -375,10 +375,10 @@ function CertificationsSection() {
             <div className="pl-8 relative">
               <div className="absolute left-[-9px] top-[12px] w-[15px] h-[15px] bg-white/80 rounded-full backdrop-blur-sm" 
                    style={{ filter: 'blur(0.5px)' }} />
-              <h3 className="font-['Poppins:ExtraBold',_sans-serif] text-[24px] text-[rgba(248,247,249,0.5)] mb-1">
+              <h3 className="font-extrabold text-2xl text-[rgba(248,247,249,0.85)] mb-1">
                 Ingenious 2k25 – Innovation Challenge
               </h3>
-              <p className="font-['Poppins:Medium',_sans-serif] text-[24px] text-[rgba(248,247,249,0.5)] leading-[1.5]">
+              <p className="font-medium text-2xl text-[rgba(248,247,249,0.85)] leading-[1.5]">
                 Secured award for developing a cutting-edge Multilingual Speech Emotion Recognition System, leveraging LSTM networks with MFCC and Mel-Spectrogram features to achieve high accuracy in real-time emotion detection.
               </p>
             </div>
@@ -393,49 +393,49 @@ function ContactsSection() {
   return (
     <section id="contacts" className="py-20 relative">
       <div className="max-w-7xl mx-auto px-6">
-        <h2 className="font-['Poppins:Bold',_sans-serif] text-[96px] text-[#f8f7f9] mb-12">
+        <h2 className="font-bold text-4xl text-[#f8f7f9] mb-12">
           Contacts
         </h2>
         
         <div className="space-y-4 max-w-4xl">
           <div>
-            <span className="font-['Poppins:ExtraBold',_sans-serif] text-[24px] text-[rgba(248,247,249,0.5)]">
+            <span className="font-extrabold text-2xl text-[rgba(248,247,249,0.85)]">
               Email - 
             </span>
-            <span className="font-['Poppins:Medium',_sans-serif] text-[24px] text-[rgba(248,247,249,0.5)]">
+            <span className="font-medium text-2xl text-[rgba(248,247,249,0.85)]">
               ap6272440@gmail.com
             </span>
           </div>
           <div>
-            <span className="font-['Poppins:ExtraBold',_sans-serif] text-[24px] text-[rgba(248,247,249,0.5)]">
+            <span className="font-extrabold text-2xl text-[rgba(248,247,249,0.85)]">
               Phone - 
             </span>
-            <span className="font-['Poppins:Medium',_sans-serif] text-[24px] text-[rgba(248,247,249,0.5)]">
+            <span className="font-medium text-2xl text-[rgba(248,247,249,0.85)]">
               +91 7026487702
             </span>
           </div>
           <div>
-            <span className="font-['Poppins:ExtraBold',_sans-serif] text-[24px] text-[rgba(248,247,249,0.5)]">
+            <span className="font-extrabold text-2xl text-[rgba(248,247,249,0.85)]">
               LinkedIn - 
             </span>
             <a 
               href="https://linkedin.com/in/anand-b-patil" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="font-['Poppins:Medium',_sans-serif] text-[24px] text-[rgba(248,247,249,0.5)] hover:text-[#f8f7f9] transition-colors duration-200"
+              className="font-medium text-2xl text-[rgba(248,247,249,0.85)] hover:text-[#f8f7f9] transition-colors duration-200"
             >
               anand-b-patil
             </a>
           </div>
           <div>
-            <span className="font-['Poppins:ExtraBold',_sans-serif] text-[24px] text-[rgba(248,247,249,0.5)]">
+            <span className="font-extrabold text-2xl text-[rgba(248,247,249,0.85)]">
               GitHub - 
             </span>
             <a 
               href="https://github.com/Anand-b-patil" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="font-['Poppins:Medium',_sans-serif] text-[24px] text-[rgba(248,247,249,0.5)] hover:text-[#f8f7f9] transition-colors duration-200"
+              className="font-medium text-2xl text-[rgba(248,247,249,0.85)] hover:text-[#f8f7f9] transition-colors duration-200"
             >
               Anand-b-patil
             </a>
