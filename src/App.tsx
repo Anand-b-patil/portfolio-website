@@ -1,5 +1,7 @@
 import { useState, useEffect } from 'react';
 // removed unused svgPaths import and profile image per request
+import useInView from './hooks/useInView';
+import Modal from './components/Modal';
 
 function Navigation() {
   const [activeSection, setActiveSection] = useState('home');
@@ -318,22 +320,38 @@ function ProjectsSection() {
 }
 
 function ProjectItem({ title, github, description, tech }: { title: string; github: string; description: string; tech: string }) {
+  const [ref, inView] = useInView<HTMLDivElement>({ threshold: 0.12 });
+  const [open, setOpen] = useState(false);
+
   return (
-    <div className="max-w-4xl relative project-card section-fade-in">
-      <div className="pl-8 relative">
-        <div className="absolute left-[-9px] top-[12px] w-[15px] h-[15px] bg-white/80 rounded-full backdrop-blur-sm" 
-             style={{ filter: 'blur(0.5px)' }} />
-        <h3 className="font-['Poppins:ExtraBold',_sans-serif] text-[24px] text-[rgba(248,247,249,0.5)] mb-1">
-          {title} <span className="font-['Poppins:Medium',_sans-serif]">{github}</span>
-        </h3>
-        <p className="font-['Poppins:Medium',_sans-serif] text-[24px] text-[rgba(248,247,249,0.5)] leading-[1.5] mb-3">
-          {description}
-        </p>
-        <p className="font-['Poppins:Medium',_sans-serif] text-[24px] text-[rgba(248,247,249,0.5)] leading-[1.5]">
-          <span className="font-['Poppins:ExtraBold',_sans-serif]">Tech Stack:</span> {tech}
-        </p>
+    <>
+      <div ref={ref} className={`max-w-4xl relative project-card reveal ${inView ? 'is-visible' : ''}`} onClick={() => setOpen(true)} style={{ cursor: 'pointer' }}>
+        <div className="pl-8 relative">
+          <div className="absolute left-[-9px] top-[12px] w-[15px] h-[15px] bg-white/80 rounded-full backdrop-blur-sm" 
+               style={{ filter: 'blur(0.5px)' }} />
+          <h3 className="font-['Poppins:ExtraBold',_sans-serif] text-[24px] text-[rgba(248,247,249,0.5)] mb-1">
+            {title} <span className="font-['Poppins:Medium',_sans-serif]">{github}</span>
+          </h3>
+          <p className="font-['Poppins:Medium',_sans-serif] text-[24px] text-[rgba(248,247,249,0.5)] leading-[1.5] mb-3">
+            {description}
+          </p>
+          <p className="font-['Poppins:Medium',_sans-serif] text-[24px] text-[rgba(248,247,249,0.5)] leading-[1.5]">
+            <span className="font-['Poppins:ExtraBold',_sans-serif]">Tech Stack:</span> {tech}
+          </p>
+        </div>
       </div>
-    </div>
+
+      <Modal visible={open} onClose={() => setOpen(false)}>
+        <div>
+          <h2 className="text-3xl font-['Poppins:ExtraBold',_sans-serif] mb-4">{title}</h2>
+          <p className="mb-4">{description}</p>
+          <p className="font-['Poppins:Medium',_sans-serif]"><strong>Tech:</strong> {tech}</p>
+          {github && github.startsWith('http') && (
+            <p className="mt-4"><a href={github} target="_blank" rel="noopener noreferrer" className="underline">View on GitHub</a></p>
+          )}
+        </div>
+      </Modal>
+    </>
   );
 }
 
